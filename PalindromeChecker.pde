@@ -16,12 +16,19 @@ public void setup()
 }
 public boolean palindrome(String word)
 {
-  String sNew = new String();
-   for(int i=word.length()-1; i>=0; i--){
-     sNew = sNew + word.substring(i,i+1);
+  String sNew = new String();//returns with no spaces
+   for(int i=0; i<word.length(); i++){
+     if(Character.isLetter(word.charAt(i)) == true){
+     sNew = sNew + word.charAt(i);
   }
-   if(sNew.substring(0,sNew.length()).equals(word.substring(0,word.length())))
+}
+  sNew.toLowerCase();//shifts to lowercase
+   for(int i=word.length()-1; i>=0; i--){
+    sNew = sNew + word.substring(i,i+1);
+  }
+   if(sNew.substring(0,sNew.length()).equals(word.substring(0,word.length()))){
      return true;
+    }
      return false;
 }
 public String reverse(String str)
